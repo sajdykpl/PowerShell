@@ -26,10 +26,10 @@ function Search-IP {
     Search-IP | Export-CSV -Path "$($env:USERPROFILE)\Desktop\IPs.csv"
 
 .NOTES
-  Version:        1.0
+  Version:        1.1
   Author:         Daniel Sajdyk
   Creation Date:  01.01.2024
-  Purpose/Change: Initial function development
+  Purpose/Change: Cleaning unnecessary comments
 
 
 .EXAMPLE
@@ -55,7 +55,7 @@ function Search-IP {
 
     BEGIN {
         $arrayListIPAddressess = New-Object -TypeName 'System.Collections.ArrayList';
-        #$regexPattern = '\d{1,3}\[?\.\]?\d{1,3}\[?\.\]?\d{1,3}\[?\.\]?\d{1,3}'
+        #regex below catches IP addresses including also those with dots in brackets
         $regexPattern = '(?<ip>\d{1,3}.?\..?\d{1,3}.?\..?\d{1,3}.?\..?\d{1,3})' #ten regex wyłapuje wszystkie adresy które wokół kropek rozdzielających okrekty mają dowolne znaki (np. nawias okrągły, lub kwardratowy)
         $removeCharacters = @('\[', 
                                 '\]',

@@ -37,3 +37,15 @@ or
 ```
     Search-IP | Export-CSV -Path "$($env:USERPROFILE)\Desktop\IP-Sorted.csv"
 ```
+
+# INSTALLATION
+The simpliest way to install this function in system is by creating PowerShell profile file with command below:
+```
+    New-Item -Path $profile.CurrentUserAllHosts -Type File -Force
+
+```
+Then open newly created file with command below, paste function inside and save it:
+```
+    notepad $Profile.CurrentUserAllHosts
+```
+Then you can run PowerShell and you should be able to use function just by calling its name **Search-IP**
